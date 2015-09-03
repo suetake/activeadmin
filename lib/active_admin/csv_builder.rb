@@ -69,7 +69,6 @@ module ActiveAdmin
 
     def build_row(resource, columns, options)
       columns.map do |column|
-        column.data = column.data.encode(Encoding::Shift_JIS, invalid: :replace, replace: '?', undef: :replace)
         encode call_method_or_proc_on(resource, column.data), options
       end
     end
