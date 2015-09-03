@@ -77,7 +77,7 @@ module ActiveAdmin
       if options[:encoding]
         content.to_s.encode options[:encoding], options[:encoding_options]
       else
-        content.to_s.encode(Encoding::Windows_31J, undef: :replace, replace: "")
+        content.to_s.encode(Encoding::Shift_JIS, invalid: :replace, replace: '?', undef: :replace)
       end
     end
 
